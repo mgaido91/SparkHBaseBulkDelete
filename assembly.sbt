@@ -5,7 +5,7 @@ assemblySettings
 mergeStrategy in assembly := {
   case PathList("org", "apache", "spark", "unused", "UnusedStubClass.class") => MergeStrategy.discard
   case PathList("javax", "servlet", xs @ _*) => MergeStrategy.first
-  case PathList("org", "apache", "jasper", xs @ _*) => MergeStrategy.first
+  case PathList("org", "apache", "jasper", xs @ _*) => MergeStrategy.discard
   case x =>
     val oldStrategy = (mergeStrategy in assembly).value
     oldStrategy(x)
